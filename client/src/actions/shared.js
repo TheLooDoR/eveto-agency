@@ -26,21 +26,21 @@ const teamData = teamData => {
 }
 
 export const getMenuData = () => dispatch => {
-    Axios.get('https://api.eveto.io/wp-json/menus/v1/menus/2')
+    Axios.get('http://api.eveto.io/wp-json/menus/v1/menus/2')
         .then((response) => {
             dispatch(menuData(response.data))
         });
 }
 
 export const getProjectsData = () => dispatch => {
-    Axios.get('https://api.eveto.io/wp-json/projects/v2/archive')
+    Axios.get('http://api.eveto.io/wp-json/projects/v2/archive')
         .then((response) => {
             dispatch(projectsData(response.data))
         })
 }
 
 export const getTeamData = ()=> dispatch => {
-    Axios.get('https://api.eveto.io/wp-json/options-page/v2/our_team')
+    Axios.get('http://api.eveto.io/wp-json/options-page/v2/our_team')
         .then((response) => {
             dispatch(teamData(response.data))
         })
