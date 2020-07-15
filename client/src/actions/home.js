@@ -23,14 +23,14 @@ const technologiesData = technologiesData => {
 
 
 export const getPageData = () => dispatch => {
-    Axios.get('http://api.eveto.io/wp-json/page/v2/home')
+    Axios.get('https://api.eveto.io/wp-json/page/v2/home')
         .then((response) => {
             dispatch(pageData(response.data))
         })
 }
 
 export const getTechnologiesData = () => dispatch => {
-    Axios.get('http://api.eveto.io/wp-json/options-page/v2/technology')
+    Axios.get('https://api.eveto.io/wp-json/options-page/v2/technology')
         .then((response) => {
             dispatch(technologiesData(response.data))
         })
