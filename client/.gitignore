@@ -14,7 +14,7 @@ package-lock.json
 /dist/
 /dist-server/
 /compiled/
-
+build
 # Node #
 *.log
 /npm-debug.log.*
