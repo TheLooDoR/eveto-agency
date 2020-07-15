@@ -1,0 +1,12 @@
+.ScrollButtonComponent {
+  width: 60px;
+  height: 60px;
+  box-sizing: border-box;
+  background: $main-color;
+  box-shadow: 0 15px 40px rgba(255, 90, 95, 0.3);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}

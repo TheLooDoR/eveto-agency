@@ -1,0 +1,254 @@
+.MainHeader {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__wrap {
+    background: #fff;
+  }
+  @include media('>=tablet') {
+    padding: 20px 0;
+  }
+  @include media('>=desktop') {
+    padding: 25px 0;
+  }
+}
+
+.logo {
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__img {
+    width: 30px;
+    height: 30px;
+    transform: rotate(-45deg);
+    background: #FF5A5F;
+    border-radius: 4px;
+    margin-left: 5px;
+  }
+  &__title {
+    font-family: $montserrat;
+    font-style: normal;
+    font-size: 14px;
+    padding-left: 12px;
+  }
+  @include media('>=tablet') {
+    &__img {
+      width: 33px;
+      height: 33px;
+    }
+    &__title {
+      font-size: 16px;
+    }
+  }
+  @include media('>=desktop') {
+    &__img {
+      width: 35px;
+      height: 35px;
+    }
+    &__title {
+      font-size: 18px;
+    }
+  }
+}
+
+.menu {
+  &__list {
+    display: inline-flex;
+    list-style: none;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  &__item {
+    padding: 0 10px;
+  }
+  &__order-btn {
+    padding: 20px 30px;
+    margin: 0 10px;
+    background: #fff;
+    &:hover {
+      background: #fff;
+      opacity: .8;
+    }
+    @include media('>=desktop') {
+      background: $main-color;
+      &:hover {
+        background: $main-color-dark;
+        opacity: 1;
+      }
+    }
+  }
+  &__partners-btn {
+    padding: 20px 20px 20px 78px;
+    background: rgba(255, 255, 255, 0.06);
+    position: relative;
+    margin: 0 10px;
+    &::before {
+      display: inline-block;
+      content: 'New';
+      text-transform: uppercase;
+      color: #fff;
+      padding: 10px;
+      background: $main-color;
+      border-radius: 6px;
+      position: absolute;
+      left: 15px;
+      top: 12px;
+      font-weight: 500;
+    }
+    @include media('>=desktop') {
+      background: rgba(255, 90, 95, 0.06);
+    }
+    &:hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
+  }
+}
+
+.main_color {
+  color: #fff;
+  @include media('>=desktop') {
+    color: $main-color;
+  }
+}
+
+.white_color {
+  color: $main-color;
+  @include media('>=desktop') {
+    color: #fff;
+  }
+}
+
+.bm-custom-icon {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  &::before {
+    content: 'menu';
+    text-transform: uppercase;
+    position: absolute;
+    left: -55px;
+    font-weight: bold;
+    color: #2F2F2F;
+  }
+}
+
+.bm-custom-icon-cross {
+  width: 23px;
+  height: 1px;
+  background: #2F2F2F;
+  margin: 2px 0;
+}
+
+.bm__partners-btn {
+
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: auto;
+  height: 15px;
+  top: 35px;
+  right: 15px;
+  &:hover {
+    cursor: pointer;
+  }
+  @include media('>=tablet') {
+    top: 47px;
+  }
+  @include media('>=desktop') {
+    top: 50px;
+    right: 36px;
+  }
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #a90000;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+  top: 30px !important;
+  right: 20px !important;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #fff;
+  height: 24px !important;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: $main-color;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    transform: rotate(-45deg);
+    background: #fff;
+    border-radius: 4px;
+    left: 20px;
+    top: 30px;
+  }
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+  margin: 10px 0;
+  text-transform: uppercase;
+  a {
+    color: #fff;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}

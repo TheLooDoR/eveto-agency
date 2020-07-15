@@ -1,0 +1,133 @@
+.Footer {
+  &__feedback-wrap {
+    background: $main-color;
+  }
+  &__feedback {
+    padding: 65px 0;
+  }
+  &__footer {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    @include media('>=desktop') {
+      padding: 90px 0;
+    }
+  }
+  &__logo {
+
+  }
+  &__menu {
+
+  }
+  &__rights {
+    font-size: 14px;
+  }
+  &__menu-btn {
+    height: 15px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    position: relative;
+    &::before {
+      content: 'menu';
+      text-transform: uppercase;
+      position: absolute;
+      left: -50px;
+      font-weight: bold;
+      color: #2F2F2F;
+    }
+    .line {
+      background: #2F2F2F;
+      width: 23px;
+      height: 1px;
+    }
+  }
+  @include media('>=tablet') {
+    &__rights {
+      font-size: 16px;
+    }
+  }
+}
+
+.footer-feedback {
+  display: flex;
+  flex-flow: row wrap;
+  color: #fff;
+  justify-content: center;
+  &__title-wrap {
+    flex-basis: 100%;
+    text-align: center;
+  }
+  &__title {
+    margin: 0;
+    padding-right: 0;
+    font-size: 36px;
+    color: #fff;
+  }
+  &__subtitle {
+    font-size: 18px;
+    text-align: left;
+  }
+  &__contacts-wrap {
+    display: flex;
+    flex-flow: column
+  }
+  &__contact {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.23);
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  &__contact-title {
+    padding-bottom: 25px;
+    padding-top: 25px;
+    font-size: 16px;
+  }
+  &__contact-value {
+    padding-top: 25px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .request-title {
+    padding-right: 12px;
+  }
+  .phone-title {
+    padding-right: 25px;
+  }
+  .email-title {
+    padding-right: 10px;
+  }
+  a {
+    color: #fff;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  @include media('>=phone') {
+    .request-title {
+      padding-right: 70px;
+    }
+    .phone-title {
+      padding-right: 115px;
+    }
+    .email-title {
+      padding-right: 44px;
+    }
+  }
+  @include media('>=tablet') {
+    &__contacts-wrap {
+      flex-grow: 1;
+    }
+    &__title-wrap {
+      flex-basis: auto;
+      text-align: left;
+      padding-top: 25px;
+    }
+    &__title {
+      padding-right: 120px;
+    }
+  }
+}

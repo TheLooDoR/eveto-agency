@@ -1,0 +1,16 @@
+.ScrollUpButton {
+  &__container {
+    position: fixed;
+    right: -100px;
+    bottom: 50px;
+    transition: right 0.5s;
+    cursor: pointer;
+    z-index: 1;
+    &:focus {
+      outline: none;
+    }
+  }
+  &__transition {
+    right: 80px;
+  }
+}

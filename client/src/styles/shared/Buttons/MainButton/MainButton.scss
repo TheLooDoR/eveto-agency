@@ -1,0 +1,35 @@
+.MainButton {
+  background: $main-color;
+  box-shadow: 0 15px 40px rgba(255, 90, 95, 0.3);
+  border-radius: 6px;
+  transition: all .3s ease;
+  &:hover {
+    background: #E65E62;
+    box-shadow: 0 15px 40px rgba(255, 90, 95, 0.44);
+  }
+  border: none;
+  &__text {
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0.08em;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    transition: all .3s ease;
+  }
+
+}
+
+.MainButton_white {
+  background: #fff;
+  .MainButton__text {
+    color: $main-color;
+  }
+  &:hover {
+    opacity: 0.9;
+    background: #fff;
+    .MainButton__text {
+      color: #ff4641;
+    }
+  }
+}

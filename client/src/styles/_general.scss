@@ -1,0 +1,27 @@
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    max-width: 1030px;
+    box-sizing: border-box;
+}
+
+.react-spinner-loader-svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    polygon {
+        stroke: $main-color;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    transition: all .3s ease;
+    &:hover {
+        color: #000000a8;
+    }
+}

@@ -1,0 +1,105 @@
+.projects-page {
+  &__wrap {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  &__title {
+    text-align: center;
+    margin: 30px 0;
+  }
+  &__categories {
+    list-style: none;
+    background: #F9F9F9;
+    border-radius: 6px;
+    margin-top: 0;
+    margin-bottom: 0;
+    align-self: flex-start;
+    padding: 0;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 7px;
+      background: white url('../../../assets/select-arrow.png') no-repeat center center;
+    }
+  }
+  &__categories select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    background: transparent;
+    text-transform: uppercase;
+    color: #DBDBDB;
+    font-weight: bold;
+    padding: 20px 45px 20px 20px;
+    min-width: 165px;
+    &:focus {
+      outline: none;
+    }
+  }
+  &__category {
+    display: inline-block;
+    padding: 20px 0 15px 0;
+    margin: 0 30px;
+    border: none;
+    border-bottom: 5px solid transparent;
+    transition: all .3s ease;
+    text-transform: uppercase;
+    color: #DBDBDB;
+    font-weight: bold;
+    &:hover {
+      color: $main-color;
+      cursor: pointer;
+      border-bottom: 5px solid $main-color;
+    }
+    &--active {
+      color: $main-color;
+      border-bottom: 5px solid $main-color;
+    }
+    &:not(&--active):hover {
+      border-bottom: 5px solid #8D8D8D;
+      color: #8D8D8D;
+    }
+  }
+  &__projects-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &__project {
+
+    justify-content: flex-end;
+  }
+  .infinite-scroll-component__outerdiv {
+    width: 100%;
+  }
+  .infinite-scroll-component {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+  @include media('>=tablet') {
+    &__project {
+      margin: 20px 0;
+      width: 49%;
+      min-height: 328px;
+    }
+    &__categories {
+      align-self: auto;
+      margin-bottom: 65px;
+      &:before {
+        display: none;
+      }
+    }
+    .infinite-scroll-component {
+      flex-flow: row wrap;
+    }
+  }
+}

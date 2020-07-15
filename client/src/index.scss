@@ -1,0 +1,61 @@
+$breakpoints: (
+        'xs-phone': 320px,
+        'phone': 480px,
+        'tablet': 768px,
+        'desktop': 1024px,
+        'widescreen': 1200px,
+        'ultra-wide': 1350px
+);
+
+// keywords
+$media-expressions: (
+        'screen': 'screen',
+        'print': 'print',
+        'handheld': 'handheld',
+        'landscape': '(orientation: landscape)',
+        'portrait': '(orientation: portrait)',
+        'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+        'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);
+@import "./styles/basic/variables";
+@import "./styles/fonts";
+@import './styles/general';
+@import "./styles/basic/functions";
+@import "./styles/basic/include-media";
+@import "./styles/basic/mixins";
+@import "styles/basic/typography";
+@import "./styles/basic/helpers";
+
+//components
+@import "./styles/shared/sectionTitle/SectionTitle";
+@import "./styles/shared/Buttons/MainButton/MainButton";
+@import './styles/shared/Buttons/ScrollButton/ScrollButton';
+@import "./styles/shared/header/headerComponent";
+@import "./styles/shared/footer/FooterComponent";
+@import "./styles/shared/Input/InputComponent";
+@import "./styles/shared/subscribeForm/subscribeFormComponent";
+
+//sections
+@import "./styles/shared/ourStackSection/OurStackSectionComponent";
+@import "./styles/shared/ourTeamSection/OurTeamSection";
+@import "./styles/components/home/infoSliderSection/InfoSliderSectionComponent";
+@import "./styles/components/home/mainSection/MainSectionComponent";
+@import "./styles/components/home/mainSection/slider-animation.css";
+@import "./styles/components/home/newsSection/newsSectionComponent";
+@import "./styles/components/home/ourProjectsSection/OurProjectsSectionComponents";
+@import "./styles/components/projects/MainSectionComponent";
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
