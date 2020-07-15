@@ -16,6 +16,7 @@ app.use(express.json());
 app.use(express.static(path.resolve('client', 'build')));
 
 // Creates weather endpoint
+//test
 app.post('/weather', async (req, res) => {
     const { location } = req.body
 
