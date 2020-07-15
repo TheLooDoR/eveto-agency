@@ -1,60 +1,32 @@
 const express = require('express')
-const path = require('path');
-const axios = require('axios');
+const bodyParser = require('body-parser');
+const cors = require('cors')
+const morgan = require('morgan')
 
-// Loads env variables
 require('dotenv').config()
 
-const app = express();
+const app = express()
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001
+const CLIENT_ORIGIN = process.env.NODE_ENV === 'production'
+    ? process.env.CLIENT_ORIGIN
+    : 'http://localhost:3000'
 
-// Adds json parsing middleware
-app.use(express.json());
+app.use(morgan('dev'))
 
-// Setup static directory to serve
-app.use(express.static(path.resolve(__dirname, 'client/build')));
+app.use(bodyParser.urlencoded({ extended: false}))
+app.use(bodyParser.json());
 
-// Creates weather endpoint
-//test
-// app.post('/weather', async (req, res) => {
-//     const { location } = req.body
-//
-//     // Encode the variable so we can send the location in a URL
-//     const encodedLocation = encodeURIComponent(location)
-//
-//     try {
-//         // Call the Weather API
-//         const { data } = await axios({
-//             method: "GET",
-//             url: `https://aerisweather1.p.rapidapi.com/observations/${encodedLocation}`,
-//             headers: {
-//                 "content-type": "application/octet-stream",
-//                 "x-rapidapi-host": "aerisweather1.p.rapidapi.com",
-//                 "x-rapidapi-key": process.env.RAPIDAPI_KEY,
-//                 "useQueryString": true
-//             }
-//         })
-//
-//         // Pull the information that we need from the Weather API response
-//         const weatherData = {
-//             conditions: data.response.ob.weather,
-//             tempC: data.response.ob.tempC,
-//             tempF: data.response.ob.tempF
-//         }
-//
-//         // Return the data object
-//         return res.send(weatherData)
-//     } catch (e) {
-//         console.log(e)
-//
-//         return res.status(500).send('Error.')
-//     }
-// })
+app.use(cors({
+    origin: CLIENT_ORIGIN
+}))
 
+const path = require('path')
+app.use(express.static(path.join(__dirname, 'client/build')));
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
-});
+})
 
-// console.log that your server is up and running
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+app.listen(PORT, () => {
+    console.log(`Server is running on PORT ${PORT}`);
+});
